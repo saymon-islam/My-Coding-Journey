@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Day 10 - Advanced Forms</title>
+    <style>
+        body { font-family: 'Segoe UI', sans-serif; padding: 30px; background-color: #eef2f3; }
+        .form-container { background: white; padding: 25px; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); width: 300px; }
+        label { display: block; margin-top: 10px; font-weight: bold; }
+        select, input[type="radio"] { margin-bottom: 10px; }
+        button { width: 100%; padding: 10px; background: #3498db; color: white; border: none; border-radius: 5px; cursor: pointer; margin-top: 15px; }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h2 style="color: #2c3e50; text-align: center;">Registration</h2>
+        <form>
+            <label>Choose your Track:</label>
+            <select>
+                <option>Web Development</option>
+                <option>App Development</option>
+                <option>Data Science</option>
+            </select>
+
+            <label>Gender:</label>
+            <input type="radio" name="gender" value="male"> Male
+            <input type="radio" name="gender" value="female"> Female
+
+            <label>Profile Picture:</label>
+            <input type="file">
+
+            <button type="submit">Submit Day 10 Task</button>
+        </form>
+    </div>
+</body>
+</html>
