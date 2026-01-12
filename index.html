@@ -2,42 +2,50 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Day 12 - Advanced Layout</title>
+    <title>Day 13 - Image Gallery</title>
     <style>
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; background-color: #f8f9fa; text-align: center; }
-        .header { background: #343a40; color: white; padding: 40px 20px; }
-        .container { display: flex; flex-wrap: wrap; justify-content: center; padding: 20px; gap: 15px; }
-        .card { 
-            background: white; 
-            border: 1px solid #ddd; 
-            border-radius: 10px; 
-            width: 280px; 
-            padding: 20px; 
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1); 
+        body { font-family: sans-serif; background-color: #f4f4f4; padding: 20px; }
+        h1 { text-align: center; color: #333; }
+        
+        /* CSS Grid Layout */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            padding: 20px;
         }
-        .card h3 { color: #007bff; }
-        @media (max-width: 600px) { .card { width: 100%; } }
+        
+        .gallery-item {
+            background: #ddd;
+            height: 150px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+            font-weight: bold;
+            color: #555;
+            transition: 0.3s;
+        }
+
+        .gallery-item:hover {
+            background: #007bff;
+            color: white;
+            transform: translateY(-5px);
+        }
     </style>
 </head>
 <body>
-    <div class="header">
-        <h1>Welcome to My Coding Journey</h1>
-        <p>Current Milestone: Module 7 & 8</p>
+    <h1>Day 13: CSS Grid Gallery</h1>
+    
+    <div class="gallery">
+        <div class="gallery-item">Photo 1</div>
+        <div class="gallery-item">Photo 2</div>
+        <div class="gallery-item">Photo 3</div>
+        <div class="gallery-item">Photo 4</div>
+        <div class="gallery-item">Photo 5</div>
+        <div class="gallery-item">Photo 6</div>
     </div>
 
-    <div class="container">
-        <div class="card">
-            <h3>Structure</h3>
-            <p>Mastering HTML5 Semantic tags and Forms.</p>
-        </div>
-        <div class="card">
-            <h3>Styling</h3>
-            <p>Using CSS Flexbox and Responsive Media Queries.</p>
-        </div>
-        <div class="card">
-            <h3>Future</h3>
-            <p>Getting ready for Bootstrap and Australia 2029! 🇦🇺</p>
-        </div>
-    </div>
+    <p style="text-align:center;">This layout adjusts automatically on any screen! 📱💻</p>
 </body>
 </html>
