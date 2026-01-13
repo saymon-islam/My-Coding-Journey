@@ -2,50 +2,49 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Day 13 - Image Gallery</title>
+    <title>Day 14 - Navigation Bar</title>
     <style>
-        body { font-family: sans-serif; background-color: #f4f4f4; padding: 20px; }
-        h1 { text-align: center; color: #333; }
+        body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
         
-        /* CSS Grid Layout */
-        .gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 15px;
-            padding: 20px;
-        }
-        
-        .gallery-item {
-            background: #ddd;
-            height: 150px;
+        /* Navbar Styling */
+        .navbar {
+            background-color: #333;
+            overflow: hidden;
             display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 10px;
-            font-weight: bold;
-            color: #555;
-            transition: 0.3s;
+            justify-content: space-around;
+            padding: 15px 0;
         }
 
-        .gallery-item:hover {
-            background: #007bff;
+        .navbar a {
             color: white;
-            transform: translateY(-5px);
+            text-decoration: none;
+            font-size: 18px;
+            padding: 10px 20px;
+            border-radius: 5px;
         }
+
+        .navbar a:hover {
+            background-color: #007bff;
+            transition: 0.4s;
+        }
+
+        .content { padding: 50px; text-align: center; }
     </style>
 </head>
 <body>
-    <h1>Day 13: CSS Grid Gallery</h1>
-    
-    <div class="gallery">
-        <div class="gallery-item">Photo 1</div>
-        <div class="gallery-item">Photo 2</div>
-        <div class="gallery-item">Photo 3</div>
-        <div class="gallery-item">Photo 4</div>
-        <div class="gallery-item">Photo 5</div>
-        <div class="gallery-item">Photo 6</div>
+
+    <div class="navbar">
+        <a href="#">Home</a>
+        <a href="#">Projects</a>
+        <a href="#">About Me</a>
+        <a href="#">Contact</a>
     </div>
 
-    <p style="text-align:center;">This layout adjusts automatically on any screen! 📱💻</p>
+    <div class="content">
+        <h1>Day 14: Navigation Bar Layout</h1>
+        <p>I am learning how to build the structure of a real website!</p>
+        <p>Goal: Australia 2029 🇦🇺</p>
+    </div>
+
 </body>
 </html>
