@@ -3,43 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Day 18 - Bootstrap Accordion</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Day 19 - Tailwind CSS</title>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-light">
+<body class="bg-gray-100 flex items-center justify-center h-screen">
 
-    <div class="container mt-5">
-        <h2 class="text-center mb-4 text-primary">Day 18: Frequently Asked Questions</h2>
-
-        <div class="accordion shadow" id="faqAccordion">
-            <div class="accordion-item">
-                <h2 class="accordion-header">
-                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#q1">
-                        What is my goal?
-                    </button>
-                </h2>
-                <div id="q1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
-                    <div class="accordion-body">
-                        My goal is to become a good Web Developer and move to <b>Australia by 2029</b>! 🇦🇺
-                    </div>
-                </div>
-            </div>
-
-            <div class="accordion-item">
-                <h2 class="accordion-header">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#q2">
-                        What am I learning now?
-                    </button>
-                </h2>
-                <div id="q2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                    <div class="accordion-body">
-                        I am currently mastering <b>Bootstrap (Module 8)</b> and building responsive layouts.
-                    </div>
-                </div>
-            </div>
+    <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow-lg p-6 text-center">
+        <div class="w-24 h-24 bg-blue-500 rounded-full mx-auto mb-4 flex items-center justify-center text-white text-3xl font-bold">
+            G
+        </div>
+        
+        <h5 class="mb-1 text-xl font-medium text-gray-900">Future Developer</h5>
+        <span class="text-sm text-gray-500 italic">Target: Australia 2029 🇦🇺</span>
+        
+        <div class="flex mt-4 space-x-3 justify-center">
+            <a href="#" class="inline-flex items-center px-4 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800">Day 19 Done</a>
+            <a href="#" class="inline-flex items-center px-4 py-2 text-sm font-medium text-center text-gray-900 bg-white border border-gray-300 rounded-lg hover:bg-gray-100">Contact</a>
         </div>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
