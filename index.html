@@ -3,24 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Day 19 - Tailwind CSS</title>
+    <title>Day 20 - Tailwind Pricing</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-gray-100 flex items-center justify-center h-screen">
+<body class="bg-gray-100 p-10">
 
-    <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow-lg p-6 text-center">
-        <div class="w-24 h-24 bg-blue-500 rounded-full mx-auto mb-4 flex items-center justify-center text-white text-3xl font-bold">
-            G
+    <div class="max-w-md mx-auto bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-200">
+        <div class="bg-blue-600 p-6 text-center text-white">
+            <h2 class="text-2xl font-bold uppercase tracking-widest">Premium Plan</h2>
+            <p class="text-4xl font-extrabold mt-2">$29<span class="text-lg font-normal">/mo</span></p>
         </div>
         
-        <h5 class="mb-1 text-xl font-medium text-gray-900">Future Developer</h5>
-        <span class="text-sm text-gray-500 italic">Target: Australia 2029 🇦🇺</span>
-        
-        <div class="flex mt-4 space-x-3 justify-center">
-            <a href="#" class="inline-flex items-center px-4 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800">Day 19 Done</a>
-            <a href="#" class="inline-flex items-center px-4 py-2 text-sm font-medium text-center text-gray-900 bg-white border border-gray-300 rounded-lg hover:bg-gray-100">Contact</a>
+        <div class="p-8">
+            <ul class="space-y-4 text-gray-600">
+                <li class="flex items-center">✅ High-quality Tutorials</li>
+                <li class="flex items-center">✅ 24/7 Support</li>
+                <li class="flex items-center">✅ GitHub Project Reviews</li>
+                <li class="flex items-center">✅ Job Placement Help</li>
+            </ul>
+            
+            <button class="w-full mt-8 bg-blue-600 text-white font-bold py-3 rounded-xl hover:bg-blue-700 transition duration-300">
+                Choose Plan
+            </button>
         </div>
     </div>
+
+    <p class="text-center text-gray-500 mt-6 text-sm">Day 20: Mastering UI Components 🚀</p>
 
 </body>
 </html>
