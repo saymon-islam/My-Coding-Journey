@@ -3,26 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Day 26 - First JavaScript</title>
+    <title>Day 27 - Dark Mode Toggle</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-gray-100 flex items-center justify-center h-screen">
+<body id="bodyTag" class="bg-white text-gray-900 transition-colors duration-500 flex items-center justify-center h-screen">
 
-    <div class="bg-white p-10 rounded-2xl shadow-2xl text-center max-w-sm">
-        <h1 class="text-3xl font-bold text-blue-600 mb-4">Hello, JS!</h1>
-        <p class="text-gray-600 mb-6">Click the button below to see a special message for your journey.</p>
+    <div class="text-center p-10 border border-gray-200 rounded-2xl shadow-lg">
+        <h1 id="heading" class="text-3xl font-bold mb-4">Good Morning!</h1>
+        <p class="mb-6 text-gray-600">Switch between Light and Dark mode using JavaScript.</p>
         
-        <button onclick="showMessage()" class="bg-blue-600 text-white px-6 py-3 rounded-lg font-bold hover:bg-blue-700 transition transform hover:scale-105">
-            Click Me
+        <button onclick="toggleMode()" class="bg-gray-800 text-white px-6 py-2 rounded-full font-medium hover:bg-black transition">
+            Change Theme
         </button>
 
-        <p id="message" class="mt-6 text-green-600 font-semibold h-6"></p>
+        <p class="mt-8 text-sm italic text-blue-500">Every step counts!</p>
     </div>
 
     <script>
-        function showMessage() {
-            const msgElement = document.getElementById('message');
-            msgElement.innerText = "You are on your way to Australia 2029! 🇦🇺✈️";
+        function toggleMode() {
+            const body = document.getElementById('bodyTag');
+            const heading = document.getElementById('heading');
+            
+            
+            if (body.classList.contains('bg-white')) {
+                body.classList.replace('bg-white', 'bg-gray-900');
+                body.classList.replace('text-gray-900', 'text-white');
+                heading.innerText = "Good Night! 🌙";
+            } else {
+                body.classList.replace('bg-gray-900', 'bg-white');
+                body.classList.replace('text-white', 'text-gray-900');
+                heading.innerText = "Good Morning! ☀️";
+            }
         }
     </script>
 
