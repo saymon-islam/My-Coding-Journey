@@ -3,43 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Day 29 - Digital Clock</title>
+    <title>Day 30 - 1 Month Celebration</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-gray-900 flex items-center justify-center h-screen">
+<body class="bg-indigo-50 flex items-center justify-center min-h-screen p-4">
 
-    <div class="text-center p-12 rounded-3xl border-4 border-blue-500 shadow-[0_0_50px_rgba(59,130,246,0.5)]">
-        <h2 class="text-blue-400 text-sm tracking-[0.3em] uppercase mb-4">Current Time</h2>
-        
-        <div id="clock" class="text-6xl md:text-8xl font-mono font-black text-white italic">
-            00:00:00
+    <div class="bg-white p-8 rounded-3xl shadow-xl w-full max-w-md">
+        <h2 class="text-3xl font-black text-indigo-600 mb-2 text-center">Month 1 Complete! 🎯</h2>
+        <p class="text-gray-500 text-center mb-6">Track your goals for Australia 2029</p>
+
+        <div class="flex gap-2 mb-6">
+            <input id="todoInput" type="text" class="flex-1 px-4 py-2 border-2 border-gray-200 rounded-xl focus:border-indigo-500 outline-none" placeholder="Add a new goal...">
+            <button onclick="addTask()" class="bg-indigo-600 text-white px-6 py-2 rounded-xl font-bold hover:bg-indigo-700 transition">+</button>
         </div>
 
-        <p class="mt-8 text-gray-500 font-medium">Day 29: Mastering JavaScript Intervals</p>
-        <p class="text-blue-600 mt-2 font-bold">Australia 2029 🇦🇺</p>
+        <ul id="taskList" class="space-y-3">
+            </ul>
     </div>
 
     <script>
-        function updateClock() {
-            const now = new Date(); 
-            let hours = now.getHours();
-            let minutes = now.getMinutes();
-            let seconds = now.getSeconds();
+        function addTask() {
+            const input = document.getElementById('todoInput');
+            const taskList = document.getElementById('taskList');
 
-           
-            hours = hours < 10 ? '0' + hours : hours;
-            minutes = minutes < 10 ? '0' + minutes : minutes;
-            seconds = seconds < 10 ? '0' + seconds : seconds;
-
-            const timeString = `${hours}:${minutes}:${seconds}`;
-            document.getElementById('clock').innerText = timeString;
+            if (input.value.trim() !== "") {
+                
+                const li = document.createElement('li');
+                li.className = "flex justify-between items-center bg-gray-50 p-3 rounded-xl border border-gray-100 animate-fade-in";
+                li.innerHTML = `
+                    <span class="text-gray-700">${input.value}</span>
+                    <button onclick="this.parentElement.remove()" class="text-red-500 font-bold hover:bg-red-50 px-2 rounded-lg">×</button>
+                `;
+                
+                taskList.appendChild(li);
+                input.value = ""; 
+                alert("Please write something first!");
+            }
         }
-
-       
-        setInterval(updateClock, 1000);
-        
-      
-        updateClock();
     </script>
 
 </body>
