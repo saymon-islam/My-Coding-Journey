@@ -3,42 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Day 31 - Random Quote</title>
+    <title>Day 32 - Color Switcher</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-gradient-to-r from-blue-500 to-indigo-600 flex items-center justify-center min-h-screen p-6">
+<body id="mainBody" class="flex items-center justify-center min-h-screen transition-all duration-700">
 
-    <div class="bg-white p-10 rounded-3xl shadow-2xl max-w-lg w-full text-center">
-        <h2 class="text-indigo-600 font-bold uppercase tracking-widest mb-4">Daily Inspiration</h2>
+    <div class="bg-white/80 backdrop-blur-md p-10 rounded-3xl shadow-2xl text-center max-w-sm border border-white">
+        <h2 class="text-2xl font-bold text-gray-800 mb-6">Choose Your Vibe</h2>
         
-        <p id="quoteBox" class="text-2xl font-serif text-gray-800 italic mb-6 leading-relaxed">
-            "The journey of a thousand miles begins with a single step."
-        </p>
+        <div class="grid grid-cols-3 gap-4 mb-8">
+            <button onclick="changeColor('#3B82F6')" class="w-12 h-12 rounded-full bg-blue-500 border-4 border-white shadow-lg transform hover:scale-110 transition"></button>
+            <button onclick="changeColor('#10B981')" class="w-12 h-12 rounded-full bg-emerald-500 border-4 border-white shadow-lg transform hover:scale-110 transition"></button>
+            <button onclick="changeColor('#F59E0B')" class="w-12 h-12 rounded-full bg-amber-500 border-4 border-white shadow-lg transform hover:scale-110 transition"></button>
+            <button onclick="changeColor('#EF4444')" class="w-12 h-12 rounded-full bg-red-500 border-4 border-white shadow-lg transform hover:scale-110 transition"></button>
+            <button onclick="changeColor('#8B5CF6')" class="w-12 h-12 rounded-full bg-violet-500 border-4 border-white shadow-lg transform hover:scale-110 transition"></button>
+            <button onclick="changeColor('#1F2937')" class="w-12 h-12 rounded-full bg-gray-800 border-4 border-white shadow-lg transform hover:scale-110 transition"></button>
+        </div>
 
-        <button onclick="newQuote()" class="bg-indigo-600 text-white px-8 py-3 rounded-full font-bold hover:bg-indigo-700 transition transform active:scale-95 shadow-lg">
-            New Quote
-        </button>
-
-        <p class="mt-8 text-gray-400 text-sm">Keep Pushing!</p>
+        <p class="text-gray-600 font-medium italic">"Designing my future for Australia 2029 🇦🇺"</p>
     </div>
 
     <script>
-        
-        const quotes = [
-            '"Consistency is the key to success."',
-            '"Work hard in silence, let your success be your noise."',
-            '"Code is like humor. When you have to explain it, it’s bad."',
-            '"Don’t stop when you are tired. Stop when you are done."',
-            '"Your only limit is your mind."'
-        ];
-
-        function newQuote() {
-            const quoteElement = document.getElementById('quoteBox');
-            
-            const randomIndex = Math.floor(Math.random() * quotes.length);
-            
-            quoteElement.innerText = quotes[randomIndex];
+        function changeColor(colorCode) {
+           
+            document.getElementById('mainBody').style.backgroundColor = colorCode;
         }
+        
+        
+        window.onload = () => changeColor('#f1f5f9');
     </script>
 
 </body>
