@@ -3,51 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Day 42 - ES6 Card Generator</title>
+    <title>Day 44 - Love Calculator</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-slate-900 text-white min-h-screen p-10">
+<body class="bg-rose-50 flex items-center justify-center min-h-screen p-6">
 
-    <div class="max-w-4xl mx-auto">
-        <div class="flex justify-between items-center mb-10">
-            <h1 class="text-3xl font-bold border-b-4 border-blue-500 pb-2">My Tech Projects</h1>
-            <button onclick="addProject()" class="bg-blue-600 hover:bg-blue-700 px-6 py-2 rounded-full font-bold transition">Add Random Project</button>
+    <div class="bg-white p-8 rounded-[2.5rem] shadow-2xl w-full max-w-md text-center border-b-8 border-rose-500">
+        <h2 class="text-3xl font-black text-rose-600 mb-2">Match Maker ❤️</h2>
+        <p class="text-gray-500 mb-8">Test the bond between two names!</p>
+
+        <div class="space-y-4">
+            <input id="name1" type="text" placeholder="Your Name" class="w-full px-4 py-3 rounded-2xl border-2 border-rose-100 outline-none focus:border-rose-400 transition text-center">
+            <div class="text-2xl">➕</div>
+            <input id="name2" type="text" placeholder="Partner/Friend Name" class="w-full px-4 py-3 rounded-2xl border-2 border-rose-100 outline-none focus:border-rose-400 transition text-center">
         </div>
 
-        <div id="projectContainer" class="grid grid-cols-1 md:grid-cols-2 gap-6">
-            </div>
+        <button onclick="calculateLove()" class="w-full mt-8 bg-rose-500 text-white font-bold py-4 rounded-2xl hover:bg-rose-600 transition shadow-lg transform active:scale-95">
+            Calculate Compatibility
+        </button>
 
-        <p class="text-center mt-20 text-gray-500 italic">Mastering ES6 Template Literals.</p>
+        <div id="resultArea" class="hidden mt-8 animate-bounce">
+            <h1 id="score" class="text-5xl font-black text-rose-600">0%</h1>
+            <p id="message" class="text-gray-600 mt-2 font-medium"></p>
+        </div>
+
+        <p class="mt-10 text-xs text-rose-300 font-mono italic">Australia 2029 🇦🇺 - Every bit counts!</p>
     </div>
 
     <script>
-        const projectNames = ["Portfolio Site", "E-commerce App", "Weather Dashboard", "Chat System", "Task Manager"];
-        const techStack = ["React", "Tailwind", "Firebase", "Node.js", "MongoDB"];
+        function calculateLove() {
+            const n1 = document.getElementById('name1').value.trim();
+            const n2 = document.getElementById('name2').value.trim();
+            const resultArea = document.getElementById('resultArea');
 
-        function addProject() {
-            const container = document.getElementById('projectContainer');
-            
-            
-            const name = projectNames[Math.floor(Math.random() * projectNames.length)];
-            const tech = techStack[Math.floor(Math.random() * techStack.length)];
-            const id = Math.floor(Math.random() * 1000);
-
-            
-            const cardHTML = `
-                <div class="bg-slate-800 p-6 rounded-2xl border border-slate-700 hover:border-blue-500 transition-all shadow-xl">
-                    <span class="text-xs text-blue-400 font-mono">#Project-${id}</span>
-                    <h3 class="text-xl font-bold mt-2">${name}</h3>
-                    <p class="text-gray-400 mt-2">Built with <span class="text-white font-semibold">${tech}</span></p>
-                    <button onclick="this.parentElement.remove()" class="mt-4 text-red-400 text-sm hover:underline">Remove Project</button>
-                </div>
-            `;
+            if (n1 === "" || n2 === "") {
+                alert("Please enter both names!");
+                return;
+            }
 
             
-            container.insertAdjacentHTML('afterbegin', cardHTML);
+            const score = Math.floor(Math.random() * 51) + 50; 
+            
+            resultArea.classList.remove('hidden');
+            document.getElementById('score').innerText = score + "%";
+            
+            let message = "";
+            if (score > 90) message = "Perfect Match! 🚀";
+            else if (score > 70) message = "Great Connection! ✨";
+            else message = "Good Potential! 😊";
+
+            document.getElementById('message').innerText = message;
         }
-
-        
-        window.onload = addProject;
     </script>
 
 </body>
